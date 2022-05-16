@@ -1,11 +1,12 @@
 <h2>List of products</h2>
 <ol class="product-info">
   <li>
-    <span>{{productName}}</span>
+    <span>{{product.name | uppercase}}</span>
     <ul class="product-details">
-      <li><span>Product name: </span>{{productName}}</li>
-      <li><span>Product brand: </span>{{productBrand}}</li>
-      <li><span>Product price: </span>${{productPrice}}</li>
+      <li><span>Product name: </span>{{product.name}}</li>
+      <li><span>Product brand: </span>{{product.brand}}</li>
+      <li><span>Product price: </span>${{product.price}}</li>
+      <li><span>Product description: </span>{{product.description}}</li>
     </ul>
   </li>
 </ol>
