@@ -1,0 +1,25 @@
+/* ProductsComponent's private CSS styles */
+h2 {
+  color: #006600;
+  text-align: center;
+}
+ul {
+  list-style: none;
+}
+.product-details > li > span {
+  color: brown;
+}
+table {
+  border: 2px solid brown;
+  border-collapse: collapse;
+  margin: auto;
+}
+table, th, td {
+  border: 2px solid brown;
+  padding: .5em;
+  text-align: center;
+}
+.details-button {
+  height: 3em;
+  background-color: darksalmon;
+}
