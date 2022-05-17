@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../product";
+import { PRODUCTS } from "../products-list";
 
 @Component({
   selector: 'app-products',
@@ -8,13 +9,7 @@ import {Product} from "../product";
 })
 export class ProductsComponent implements OnInit {
 
-  product: Product = {
-    id: 1,
-    name: 'Soccer ball',
-    brand: 'Adidas',
-    price: 29.8,
-    description: 'New format soccer ball from Adidas'
-  }
+  products = PRODUCTS;
 
   constructor() { }
 
