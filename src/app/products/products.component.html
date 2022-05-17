@@ -1,44 +1,58 @@
-<h2>List of products</h2>
-<ul class="products">
-  <li *ngFor="let product of products">
-    <button type="button" >
-      <span class="product-id">{{product.id}}</span>
-      <span class="product-info">{{product.name}}</span>
-      <span class="product-info">{{product.brand}}</span>
-      <span class="product-info">{{product.price}}</span>
-      <span class="product-info">{{product.description}}</span>
-    </button>
-  </li>
-</ul>
-<!--<ol class="product-info">-->
-<!--  <li>-->
-<!--    <span>{{product.name | uppercase}}</span>-->
-<!--    <ul class="product-details">-->
-<!--      <li><span>Product name: </span>{{product.name}}</li>-->
-<!--      <li><span>Product brand: </span>{{product.brand}}</li>-->
-<!--      <li><span>Product price: </span>${{product.price}}</li>-->
-<!--      <li><span>Product description: </span>{{product.description}}</li>-->
-<!--    </ul>-->
-<!--  </li>-->
-<!--</ol>-->
 
-<!--<h3>Product editing</h3>-->
-<!--<div *ngFor="let product of products">-->
-<!--  <div>-->
-<!--    <label for="name">Product name: </label>-->
-<!--    <input id="name" [(ngModel)]="product.name" placeholder="name">-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <label for="brand">Product brend: </label>-->
-<!--    <input id="brand" [(ngModel)]="product.brand" placeholder="brand">-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <label for="price">Product price: </label>-->
-<!--    <input id="price" [(ngModel)]="product.price" placeholder="price">-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <label for="description">Product description: </label>-->
-<!--    <input id="description" [(ngModel)]="product.description" placeholder="description">-->
-<!--  </div>-->
-<!--</div>-->
+<!--<ul class="products">-->
+<!--  <li *ngFor="let product of products">-->
+<!--    <button type="button" (click)="onSelect(product)" [class.selected]="product === selectedProduct">-->
+<!--      <span class="product-id">{{product.id}}</span>-->
+<!--      <span class="product-info">{{product.name}}</span>-->
+<!--      <span class="product-info">{{product.brand}}</span>-->
+<!--      <span class="product-info">{{product.price}}</span>-->
+<!--      <span class="product-info">{{product.description}}</span>-->
+<!--    </button>-->
+<!--  </li>-->
+<!--</ul>-->
+<h2>List of products</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.brand}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.description}}</td>
+      <button type="button" class="details-button" [class.selected]="product === selectedProduct"(click)=onSelect(product)>
+        Details
+      </button>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="selectedProduct">
+  <h2>{{selectedProduct.name | uppercase}} Details</h2>
+  <div>id: {{selectedProduct.id}}</div>
+  <div>
+    <label for="product-name">Product name: </label>
+    <input id="product-name" [(ngModel)]="selectedProduct.name" placeholder="name">
+  </div>
+  <div>
+    <label for="product-brand">Product brand: </label>
+    <input id="product-brand" [(ngModel)]="selectedProduct.brand" placeholder="brand">
+  </div>
+  <div>
+    <label for="product-price">Product price: </label>
+    <input id="product-price" [(ngModel)]="selectedProduct.price" placeholder="price">
+  </div>
+  <div>
+    <label for="product-description">Product description: </label>
+    <input id="product-description" [(ngModel)]="selectedProduct.description" placeholder="description">
+  </div>
+</div>
 
