@@ -34,25 +34,4 @@
     </tr>
   </tbody>
 </table>
-
-<div *ngIf="selectedProduct">
-  <h2>{{selectedProduct.name | uppercase}} Details</h2>
-  <div>id: {{selectedProduct.id}}</div>
-  <div>
-    <label for="product-name">Product name: </label>
-    <input id="product-name" [(ngModel)]="selectedProduct.name" placeholder="name">
-  </div>
-  <div>
-    <label for="product-brand">Product brand: </label>
-    <input id="product-brand" [(ngModel)]="selectedProduct.brand" placeholder="brand">
-  </div>
-  <div>
-    <label for="product-price">Product price: </label>
-    <input id="product-price" [(ngModel)]="selectedProduct.price" placeholder="price">
-  </div>
-  <div>
-    <label for="product-description">Product description: </label>
-    <input id="product-description" [(ngModel)]="selectedProduct.description" placeholder="description">
-  </div>
-</div>
-
+<app-product-detail [product]="selectedProduct"></app-product-detail>
